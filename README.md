@@ -62,8 +62,9 @@ This exploit need to meet several requirements:
 * Have HadoopConnect app installed
 
 Usage:
+
         case "${option}"
-	
+
         in
                 h) rhost=${OPTARG};; # Remote host
 		
