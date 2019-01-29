@@ -10,6 +10,9 @@ USR=$1
 PWDF=$2
 HST=$3
 PRT=$4
+
+THREADS=20
+
 export SCRIPT_NAME=`echo $0 | sed 's/.\///g'`
 echo
 echo "[!] Bruteforcing password for $USR on $HST..."
@@ -27,7 +30,7 @@ printf '.'
 }
 cat "$PWDF" | while read PASS
 do
-	while [ `jobs | wc -l ` -ge 20 ]
+	while [ `jobs | wc -l ` -ge $THREADS ]
 	do
 		sleep 1
 	done
